@@ -13,3 +13,6 @@
 ###### 7- Members can see their teammates and give them a score from 1 to 5 but they cannot score themselves.
 ###### 8-Users can choose the leaderboard they want to see. There is one leaderboard for each different team.
 ###### 9- Leaderboard will show the members of a currently selected team in order of their rank.
+
+#### Technical criteria:
+###### The design and the quality of the code, following the best practices and testability, are more important than the look and aesthetic aspect. The project should be compilable just by pulling the code and required libraries from nuget or npm. Using open source projects (available on nuget) is alright unless it's covering the test itself.
