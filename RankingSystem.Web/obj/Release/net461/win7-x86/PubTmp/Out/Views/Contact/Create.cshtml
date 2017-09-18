@@ -1,0 +1,63 @@
+@model MvcTest.Data.Models.Contact
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<form asp-action="Create">
+    <div class="container body-content">
+        <h3>@ViewData["Title"]</h3>
+        <div class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Knickname" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Knickname" class="form-control" />
+                    <span asp-validation-for="Knickname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayAs" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="DisplayAs" asp-items="Html.GetEnumSelectList<MvcTest.Common.Domain.Enums.DisplayAsEnum>()" style="width: 100%;"></select>
+                    <p><span asp-validation-for="DisplayAs" class="text-danger"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="DateOfBirth" class="form-control" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

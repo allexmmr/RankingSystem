@@ -1,0 +1,30 @@
+﻿@using RankingSystem.Data.Models;
+@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "Team";
+}
+<h3>@ViewData["Title"]</h3>
+<h5>
+    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Team/Create" data-target="#myModal">Create New</button>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Team item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Team/Details/@item.Id" data-target="#myModal">Details</button>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Team/Edit/@item.Id" data-target="#myModal">Edit</button>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Team/Delete/@item.Id" data-target="#myModal">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

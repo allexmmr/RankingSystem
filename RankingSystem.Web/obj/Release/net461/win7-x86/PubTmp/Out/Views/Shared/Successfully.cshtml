@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Successfully";
+}
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<div class="container body-content">
+    <p style="padding-top: 160px; text-align: center;">
+        <strong>Operation performed successfully.</strong>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <input id="close" type="button" value="Close" class="btn btn-default" />
+    </p>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#close").click(function () {
+            parent.location.reload();
+        });
+        
+        setTimeout(function () {
+            parent.location.reload();
+        }, 5000);
+    });
+</script>

@@ -1,0 +1,48 @@
+@model RankingSystem.Data.Models.Member
+@{
+    ViewData["Title"] = "Edit";
+}
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<form asp-action="Edit">
+    <div class="container body-content">
+        <h3>@ViewData["Title"]</h3>
+        <div class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FullName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="Status" asp-items="Html.GetEnumSelectList<RankingSystem.Common.Domain.Enums.StatusEnum>()" style="width: 100%;"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsAdmin" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IsAdmin" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

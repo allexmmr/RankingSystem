@@ -1,0 +1,36 @@
+﻿@using RankingSystem.Data.Models;
+@model IEnumerable<Member>
+@{
+    ViewData["Title"] = "Member";
+}
+<h3>@ViewData["Title"]</h3>
+<h5>
+    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Member/Create" data-target="#myModal">Create New</button>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>@Html.DisplayNameFor(model => model.IsAdmin)</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Member item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsAdmin)</td>
+                <td>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Member/Details/@item.Id" data-target="#myModal">Details</button>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Member/Edit/@item.Id" data-target="#myModal">Edit</button>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="Member/Delete/@item.Id" data-target="#myModal">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+@model MvcTest.Data.Models.Contact
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<div class="container body-content">
+    <h3>@ViewData["Title"]</h3>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.LastName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Knickname)</dt>
+        <dd>@Html.DisplayFor(model => model.Knickname)</dd>
+        <dt>@Html.DisplayNameFor(model => model.DisplayAs)</dt>
+        <dd>@Html.DisplayFor(model => model.DisplayAs)</dd>
+        <dt>@Html.DisplayNameFor(model => model.DateOfBirth)</dt>
+        <dd>@Html.DisplayFor(model => model.DateOfBirth)</dd>
+        <dt>@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.PhoneNumber)</dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Edit</a>
+    </div>
+</div>

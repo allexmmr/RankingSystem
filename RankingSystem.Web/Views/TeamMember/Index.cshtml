@@ -1,0 +1,30 @@
+﻿@using RankingSystem.Data.Models;
+@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "Assign members to the teams";
+}
+<h3>@ViewData["Title"]</h3>
+<br />
+<br />
+<h5>
+    Click on details to manage members that are assigned to a team.
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th width="210px">@Html.DisplayNameFor(model => model.Name)</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Team item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-default">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

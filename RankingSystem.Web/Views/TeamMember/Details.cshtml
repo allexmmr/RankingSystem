@@ -1,0 +1,36 @@
+@using Microsoft.AspNetCore.Http;
+@using RankingSystem.Data.Models;
+@model IEnumerable<TeamMember>
+@{
+    string[] queryString = Context.Request.Path.Value.Split('/').ToArray();
+    Context.Session.SetString("TeamId", queryString[3].ToString());
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<h3>@ViewData["Title"]</h3>
+<h5>
+    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="../Assign" data-target="#myModal">Assign Member</button>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Member.FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.Member.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Member.Status)</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TeamMember item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Member.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Member.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Member.Status)</td>
+                <td>
+                    <button type="button" class="bmd-modalButton btn btn-default" data-toggle="modal" data-bmdSrc="../Delete/@item.Id" data-target="#myModal">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

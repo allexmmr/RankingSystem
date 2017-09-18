@@ -1,0 +1,71 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@model RankingSystem.Web.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Ranking System</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Enter" class="btn btn-default" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="font-size: 13px; color: #999;">
+                            <div class="col-md-offset-2 col-md-10">
+                                Use allexmmr@gmail.com to sign in as admin.<br />
+                                Use mkokabi@developmentbeyondlearning.com to sign in as a member.
+                            </div>
+                        </div>
+                        if (Model?.Error != null)
+                        {
+                            <text>
+                            <div class="form-group text-danger">
+                                <div class="col-md-offset-2 col-md-10">
+                                    @Model.Error
+                                </div>
+                            </div>
+                            </text>
+                        }
+                    }
+                </section>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; 2017 - Ranking System</p>
+        </footer>
+    </div>
+</body>
+</html>

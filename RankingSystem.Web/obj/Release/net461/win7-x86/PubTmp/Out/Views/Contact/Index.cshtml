@@ -1,0 +1,38 @@
+﻿@using MvcTest.Data.Models;
+@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "Contact";
+}
+<h3>@ViewData["Title"]</h3>
+<h5>
+    <button type="button" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="Contact/Create" data-target="#myModal">Create New</button>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Knickname)</th>
+            <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Contact item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Knickname)</td>
+                <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                <td>
+                    <button type="button" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="Contact/Details/@item.Id" data-target="#myModal">Details</button>
+                    <button type="button" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="Contact/Edit/@item.Id" data-target="#myModal">Edit</button>
+                    <button type="button" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="Contact/Delete/@item.Id" data-target="#myModal">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
