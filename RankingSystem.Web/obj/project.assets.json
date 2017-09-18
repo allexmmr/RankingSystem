@@ -9053,11 +9053,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Allex Rocha\\Documents\\Visual Studio 2017\\Projects\\RankingSystem\\RankingSystem.Web\\RankingSystem.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Allex Rocha\\Documents\\GitHub\\RankingSystem\\RankingSystem.Web\\RankingSystem.Web.csproj",
       "projectName": "RankingSystem.Web",
-      "projectPath": "C:\\Users\\Allex Rocha\\Documents\\Visual Studio 2017\\Projects\\RankingSystem\\RankingSystem.Web\\RankingSystem.Web.csproj",
+      "projectPath": "C:\\Users\\Allex Rocha\\Documents\\GitHub\\RankingSystem\\RankingSystem.Web\\RankingSystem.Web.csproj",
       "packagesPath": "C:\\Users\\Allex Rocha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Allex Rocha\\Documents\\Visual Studio 2017\\Projects\\RankingSystem\\RankingSystem.Web\\obj\\",
+      "outputPath": "C:\\Users\\Allex Rocha\\Documents\\GitHub\\RankingSystem\\RankingSystem.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9076,8 +9076,8 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "C:\\Users\\Allex Rocha\\Documents\\Visual Studio 2017\\Projects\\RankingSystem\\RankingSystem.Data\\RankingSystem.Data.csproj": {
-              "projectPath": "C:\\Users\\Allex Rocha\\Documents\\Visual Studio 2017\\Projects\\RankingSystem\\RankingSystem.Data\\RankingSystem.Data.csproj"
+            "C:\\Users\\Allex Rocha\\Documents\\GitHub\\RankingSystem\\RankingSystem.Data\\RankingSystem.Data.csproj": {
+              "projectPath": "C:\\Users\\Allex Rocha\\Documents\\GitHub\\RankingSystem\\RankingSystem.Data\\RankingSystem.Data.csproj"
             }
           }
         }

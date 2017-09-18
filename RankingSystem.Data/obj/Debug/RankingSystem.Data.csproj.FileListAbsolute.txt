@@ -13,3 +13,18 @@ C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\Ranking
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.csproj.CoreCompileInputs.cache
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.dll
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.pdb
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\RankingSystem.Data.dll.config
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\RankingSystem.Data.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\RankingSystem.Data.pdb
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\EntityFramework.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\RankingSystem.Common.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\RankingSystem.Common.pdb
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\EntityFramework.xml
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.Migrations.Initial.resources
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.csproj.GenerateResource.Cache
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.csproj.CoreCompileInputs.cache
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Data\obj\Debug\RankingSystem.Data.pdb

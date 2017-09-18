@@ -81,19 +81,26 @@ namespace RankingSystem.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Assign([Bind("MemberId")] TeamMember teamMember)
         {
-            string sTeamId = HttpContext.Session.GetString("TeamId");
+            string isAdmin = HttpContext.Session.GetString("MemberIsAdmin").ToLower();
+            if (isAdmin != "true")
+            {
+                TempData["ErrorMessage"] = "We're sorry, only admin can perform this operation.";
+                return PartialView("Error", "Shared");
+            }
 
+            string sTeamId = HttpContext.Session.GetString("TeamId");
             if (sTeamId == null || teamMember.MemberId <= 0)
             {
+                TempData["ErrorMessage"] = "An error occurred while processing your request.";
                 return PartialView("Error", "Shared");
             }
 
             short teamId = Convert.ToInt16(sTeamId);
 
             bool assigned = await _context.TeamMembers.AnyAsync(q => q.TeamId == teamId && q.MemberId == teamMember.MemberId);
-
             if (assigned)
             {
+                TempData["ErrorMessage"] = "This member has already been assigned with this group.";
                 return PartialView("Error", "Shared");
             }
 
@@ -143,6 +150,13 @@ namespace RankingSystem.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            string isAdmin = HttpContext.Session.GetString("MemberIsAdmin").ToLower();
+            if (isAdmin != "true")
+            {
+                TempData["ErrorMessage"] = "We're sorry, only admin can perform this operation.";
+                return PartialView("Error", "Shared");
+            }
+
             TeamMember teamMember = await _context.TeamMembers.SingleOrDefaultAsync(q => q.Id == id);
             _context.TeamMembers.Remove(teamMember);
             await _context.SaveChangesAsync();

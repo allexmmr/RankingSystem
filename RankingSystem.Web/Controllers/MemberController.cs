@@ -59,6 +59,13 @@ namespace RankingSystem.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FullName,Email")] Member member)
         {
+            string isAdmin = HttpContext.Session.GetString("MemberIsAdmin").ToLower();
+            if (isAdmin != "true")
+            {
+                TempData["ErrorMessage"] = "We're sorry, only admin can perform this operation.";
+                return PartialView("Error", "Shared");
+            }
+
             if (ModelState.IsValid)
             {
                 string code = Guid.NewGuid().ToString();
@@ -138,6 +145,13 @@ namespace RankingSystem.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            string isAdmin = HttpContext.Session.GetString("MemberIsAdmin").ToLower();
+            if (isAdmin != "true")
+            {
+                TempData["ErrorMessage"] = "We're sorry, only admin can perform this operation.";
+                return PartialView("Error", "Shared");
+            }
+
             Member member = await _context.Members.SingleOrDefaultAsync(q => q.Id == id);
             _context.Members.Remove(member);
             await _context.SaveChangesAsync();

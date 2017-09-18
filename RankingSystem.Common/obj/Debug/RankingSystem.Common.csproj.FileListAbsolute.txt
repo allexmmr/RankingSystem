@@ -4,3 +4,9 @@ C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\Ranking
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.csproj.CoreCompileInputs.cache
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.dll
 C:\Users\Allex Rocha\Documents\Visual Studio 2017\Projects\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.pdb
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\bin\Debug\RankingSystem.Common.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\bin\Debug\RankingSystem.Common.pdb
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.csprojResolveAssemblyReference.cache
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.csproj.CoreCompileInputs.cache
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.dll
+C:\Users\Allex Rocha\Documents\GitHub\RankingSystem\RankingSystem.Common\obj\Debug\RankingSystem.Common.pdb

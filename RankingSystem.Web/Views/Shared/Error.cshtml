@@ -1,5 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Error";
 }
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<div class="container body-content">
+    <p class="text-danger" style="padding-top: 130px; text-align: center;">
+        <strong>Error!</strong>
+        <br />
+        @Html.Raw(TempData["ErrorMessage"])
+        <br />
+        <br />
+        <br />
+        <br />
+        <input id="close" type="button" value="Close" class="btn btn-default" />
+    </p>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#close").click(function () {
+            parent.location.reload();
+        });
+    });
+</script>
