@@ -122,6 +122,36 @@ namespace RankingSystem.Web.Controllers
             return PartialView(member);
         }
 
+        // GET: Member/Activate/code={Code}
+        public async Task<IActionResult> Activate(string code)
+        {
+            if (code == null)
+            {
+                return NotFound();
+            }
+
+            Member member = await _context.Members.SingleOrDefaultAsync(q => q.Code == code);
+
+            if (member == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    member.Status = StatusEnum.Activated;
+                    _context.Members.Attach(member);
+                    _context.Entry(member).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction("Successfully");
+                }
+            }
+
+            return PartialView(member);
+        }
+
         // GET: Member/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -158,37 +188,7 @@ namespace RankingSystem.Web.Controllers
 
             return RedirectToAction("Successfully");
         }
-
-        // GET: Member/Activate/{Code}
-        public async Task<IActionResult> Activate(string code)
-        {
-            if (code == null)
-            {
-                return NotFound();
-            }
-
-            Member member = await _context.Members.SingleOrDefaultAsync(q => q.Code == code);
-
-            if (member == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                if (ModelState.IsValid)
-                {
-                    member.Status = StatusEnum.Activated;
-                    _context.Members.Attach(member);
-                    _context.Entry(member).State = EntityState.Modified;
-                    await _context.SaveChangesAsync();
-
-                    return RedirectToAction("Successfully");
-                }
-            }
-
-            return PartialView(member);
-        }
-
+        
         // GET: Successfully
         public ActionResult Successfully()
         {

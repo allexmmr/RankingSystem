@@ -19,7 +19,7 @@ namespace RankingSystem.Test
         }
 
         private static readonly Member _memberCreate =
-            new Member { FullName = "Admin", Email = "admin@test.com", Code = Guid.NewGuid().ToString(), Status = StatusEnum.Activated, IsAdmin = true };
+            new Member { FullName = "Admin", Email = "admin@test.com", Code = Guid.NewGuid().ToString(), Status = StatusEnum.Pending, IsAdmin = true };
 
         private static readonly Member _memberEdit =
             new Member { FullName = "Member", Email = "member@test.com", Code = Guid.NewGuid().ToString(), Status = StatusEnum.Pending, IsAdmin = false };
@@ -63,6 +63,19 @@ namespace RankingSystem.Test
 
             Assert.IsNotNull(actual);
             Assert.IsTrue(actual.Id >= 0);
+        }
+
+        [TestMethod]
+        public void Activate()
+        {
+            var member = _context.Members.FirstOrDefaultAsync(q => q.Status == StatusEnum.Pending).Result;
+            var actual = _context.Members.SingleOrDefaultAsync(q => q.Code == member.Code).Result;
+            actual.Status = StatusEnum.Activated;
+            _context.Entry(actual).State = EntityState.Modified;
+            _context.SaveChangesAsync();
+
+            Assert.IsNotNull(actual);
+            Assert.IsTrue(actual.Status == StatusEnum.Activated);
         }
 
         [TestMethod]
